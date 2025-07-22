@@ -10,8 +10,16 @@ function Login() {
   const validUsername = process.env.REACT_APP_USERNAME;
   const validPassword = process.env.REACT_APP_PASSWORD;
 
+  // Debugging: Check if the env variables are being read
+  console.log("Username from env:", validUsername);
+  console.log("Password from env:", validPassword);
+
   const handleLogin = (e) => {
     e.preventDefault();
+
+    // Debugging: Log user input
+    console.log("Entered Username:", username);
+    console.log("Entered Password:", password);
 
     if (username === validUsername && password === validPassword) {
       localStorage.setItem('isLoggedIn', 'true');
