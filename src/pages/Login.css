@@ -1,0 +1,165 @@
+/* src/pages/Login.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Heading styles */
+.auth-container h2 {
+  font-size: 2.5rem;
+  color: #ff66b2;
+  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.2);
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+}
+
+/* Glass effect form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(255, 105, 180, 0.2);
+  backdrop-filter: blur(12px); /* Glass effect */
+  -webkit-backdrop-filter: blur(12px); /* For Safari */
+  width: 90%;
+  max-width: 400px;
+  transition: transform 0.3s ease;
+}
+
+/* Focus effect on form */
+form:hover {
+  transform: translateY(-5px);
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px #ff99cc;
+}
+
+/* Submit button with gradient */
+button[type="submit"] {
+  background: linear-gradient(135deg, #ff66b2, #66ccff);
+  color: white;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+}
+
+/* Links and text styles */
+.auth-container p {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.auth-container a {
+  color: #66ccff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
+
+/* Floating Balloons - same style */
+.balloon-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.balloon {
+  position: absolute;
+  font-size: 2rem;
+  animation: floatUp 10s infinite ease-in;
+  opacity: 0.6;
+}
+
+.balloon:nth-child(1) { left: 10%; animation-delay: 0s; }
+.balloon:nth-child(2) { left: 30%; animation-delay: 2s; }
+.balloon:nth-child(3) { left: 50%; animation-delay: 4s; }
+.balloon:nth-child(4) { left: 70%; animation-delay: 1s; }
+.balloon:nth-child(5) { left: 90%; animation-delay: 3s; }
+
+@keyframes floatUp {
+  0% { transform: translateY(100%); opacity: 0; }
+  20% { opacity: 0.6; }
+  100% { transform: translateY(-120%); opacity: 0; }
+}
+
+/* Enhancements for the balloons */
+.balloon {
+  animation: floatUp 10s infinite ease-in;
+  opacity: 0.7;
+  filter: blur(0.5px);
+}
+
+.balloon:nth-child(1) {
+  font-size: 2rem;
+  animation-delay: 0s;
+}
+.balloon:nth-child(2) {
+  font-size: 2.3rem;
+  animation-delay: 2s;
+}
+.balloon:nth-child(3) {
+  font-size: 2.5rem;
+  animation-delay: 4s;
+}
+.balloon:nth-child(4) {
+  font-size: 2.1rem;
+  animation-delay: 1s;
+}
+.balloon:nth-child(5) {
+  font-size: 2.2rem;
+  animation-delay: 3s;
+}
+
+/* Optional: Add a subtle gradient background to the form's parent */
+.auth-container {
+  background: linear-gradient(135deg, rgba(15, 15, 15, 0.8), rgba(28, 28, 28, 0.9)), url('https://source.unsplash.com/random/1600x900');
+  background-size: cover;
+  background-position: center;
+}
